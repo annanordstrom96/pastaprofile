@@ -1,0 +1,336 @@
+:root {
+  --primary-color: #c64242; /* The dark red from Fishetarian */
+  --secondary-color: #274069; /* The navy blue */
+  --background-color: #f8e9e9; /* The light pink background */
+  --text-color: #274069; /* Navy for text */
+  --light-accent: #f0d6d6; /* Lighter version of background */
+  --selected-color: #ffc107; /* Highlight for selected items */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  color: var(--secondary-color);
+  text-align: center;
+  margin: 2rem 0 0.5rem;
+}
+
+.tagline {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+/* Header */
+.main-header {
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.card h2 {
+  color: var(--secondary-color);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card h3 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--primary-color);
+}
+
+/* Creator Container Layout */
+.creator-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.preview-card {
+  flex: 1;
+  min-width: 300px;
+}
+
+.customizer-card {
+  flex: 2;
+  min-width: 300px;
+}
+
+/* Character Preview */
+.character-preview {
+  position: relative;
+  width: 400px; /* Increased from 300px */
+  height: 400px; /* Increased from 300px */
+  margin: 0 auto 2rem;
+  background-color: var(--light-accent);
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* Also adjust for mobile */
+@media (max-width: 768px) {
+  .character-preview {
+    width: 320px; /* Increased from 250px */
+    height: 320px; /* Increased from 250px */
+  }
+}
+/* Selection Options */
+.element-selector {
+  margin-bottom: 1.5rem;
+}
+
+.selection-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.option-item {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--text-color);
+  border-radius: 8px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.option-item.selected {
+  border-color: var(--selected-color);
+  box-shadow: 0 0 0 3px var(--selected-color);
+}
+
+.option-item.none {
+  position: relative;
+}
+
+.option-item.none:after {
+  content: "×";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  color: var(--primary-color);
+}
+
+/* Buttons */
+.primary-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin: 0 auto;
+}
+
+.primary-btn:hover {
+  background-color: #b53838; /* Slightly darker */
+  transform: translateY(-2px);
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* Decorative elements */
+.decorative-elements {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.deco-element {
+  position: absolute;
+  opacity: 0.2;
+}
+
+.pasta-1 {
+  top: 10%;
+  right: 5%;
+  transform: rotate(15deg);
+}
+
+.pasta-2 {
+  bottom: 15%;
+  left: 8%;
+  transform: rotate(-10deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .creator-container {
+    flex-direction: column;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .character-preview {
+    width: 250px;
+    height: 250px;
+  }
+}
+.pasta-joke {
+  font-style: italic;
+  text-align: center;
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 80%;
+  position: relative;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.pasta-joke:before,
+.pasta-joke:after {
+  content: '"';
+  font-size: 2rem;
+  line-height: 0;
+  position: relative;
+}
+
+.pasta-joke:before {
+  top: 0.5rem;
+  margin-right: 0.2rem;
+}
+
+.pasta-joke:after {
+  bottom: -0.1rem;
+  margin-left: 0.2rem;
+}
+/* Fix for the character preview being cut off */
+.card.preview-card {
+  overflow: visible !important;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.character-preview {
+  position: relative;
+  width: 350px; /* Slightly smaller to fit better */
+  height: 350px;
+  margin: 0 auto 2rem;
+  background-color: var(--light-accent);
+  border-radius: 50%;
+  overflow: visible !important; /* Critical fix */
+}
+
+/* Fix for character layers not displaying */
+.character-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1; /* Ensure layers are visible */
+}
+/* Secondary button styling */
+.secondary-btn {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 30px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin: 15px auto 0;
+}
+
+.secondary-btn:hover {
+  background-color: var(--light-accent);
+  transform: translateY(-2px);
+}
+
+/* Update button container for multiple buttons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}

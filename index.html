@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="Access-Control-Allow-Origin" content="*">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pasta Profile Creator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <main>
+    <div class="header-title">Pasta Profile</div>
+    <p class="tagline">Create your custom pasta character!</p>
+
+    <div class="creator-container">
+<!-- Character Preview Card -->
+<section class="card preview-card">
+  <h2>Your Pasta Profile</h2>
+  
+  <!-- Character Preview with all layers -->
+  <div id="characterPreview" class="character-preview">
+    <div id="bodyLayer" class="character-layer"></div>
+    <div id="armsLayer" class="character-layer"></div>
+    <div id="eyesLayer" class="character-layer"></div>
+    <div id="mouthLayer" class="character-layer"></div>
+    <div id="accessoryLayer" class="character-layer"></div>
+  </div>
+  
+  <!-- Pasta Joke Section -->
+  <div id="pastaJoke" class="pasta-joke">
+    <!-- Joke will appear here -->
+  </div>
+  
+  <!-- Button Container -->
+  <div class="button-container">
+    <button id="randomButton" class="primary-btn">Random Pasta!</button>
+    <div class="button-container">
+
+  <!-- Add this new button -->
+  <button id="downloadButton" class="secondary-btn">DOWNLOAD MY PASTA</button>
+</div>
+  </div>
+</section>
+      <!-- Character Customizer Card -->
+      <section class="card customizer-card">
+        <h2>Customize Your Pasta</h2>
+        
+        <!-- Body Selection -->
+        <div class="element-selector">
+          <h3>Pasta Body</h3>
+          <div id="bodySelector" class="selection-options">
+            <!-- Body options will be generated here -->
+          </div>
+        </div>
+
+        <!-- Eyes Selection -->
+        <div class="element-selector">
+          <h3>Eyes</h3>
+          <div id="eyesSelector" class="selection-options">
+            <!-- Eyes options will be generated here -->
+          </div>
+        </div>
+
+        <!-- Mouth Selection -->
+        <div class="element-selector">
+          <h3>Mouth</h3>
+          <div id="mouthSelector" class="selection-options">
+            <!-- Mouth options will be generated here -->
+          </div>
+        </div>
+
+        <!-- Arms Selection -->
+        <div class="element-selector">
+          <h3>Arms</h3>
+          <div id="armsSelector" class="selection-options">
+            <!-- Arms options will be generated here -->
+          </div>
+        </div>
+
+        <!-- Accessory Selection -->
+        <div class="element-selector">
+          <h3>Accessory (Optional)</h3>
+          <div id="accessorySelector" class="selection-options">
+            <!-- Accessory options will be generated here -->
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
